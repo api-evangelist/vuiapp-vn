@@ -1,0 +1,30 @@
+generated: '2026-10-23'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/vuiapp-vn-openapi-generated.yml
+vocabulary:
+  name: Nano Domain Vocabulary
+  description: 'Terms declared by Nano''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions. Derived,
+    not authored.'
+  version: '2026-10-23'
+  terms:
+  - term: PostAuthRealmsVuiappProtocolOpenidConnectTokenResponse
+    definition: 'Object declared by the contract with fields: total, data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/vuiapp-vn-openapi-generated.yml#/components/schemas/PostAuthRealmsVuiappProtocolOpenidConnectTokenResponse
+  - term: GetV1AdvancesResponse
+    definition: 'Object declared by the contract with fields: total, data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/vuiapp-vn-openapi-generated.yml#/components/schemas/GetV1AdvancesResponse
+  - term: Auth
+    definition: 'Resource group in the contract; its operation POST /auth/realms/vuiapp/protocol/openid-connect/token: POST /auth/realms/vuiapp/protocol/openid-connect/token'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/vuiapp-vn-openapi-generated.yml
+  - term: Advances
+    definition: 'Resource group in the contract; its operation GET /v1/advances: GET /v1/advances'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/vuiapp-vn-openapi-generated.yml

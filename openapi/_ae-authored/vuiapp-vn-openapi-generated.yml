@@ -1,0 +1,137 @@
+openapi: 3.1.0
+info:
+  title: Nano API
+  version: '2026-10-23'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-23: 2 operation(s) read from 4 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Nano has published no machine-readable contract that the pipeline
+    could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 2
+    documentation: 0
+    pages-with-code: 4
+    pages-read: 4
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-23'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://api-docs.vuiapp.vn/\
+  - https://api-docs.vuiapp.vn
+  - https://api-docs.vuiapp.vn/'+u(e)+'
+  - https://api-docs.vuiapp.vn/'+encodeURI(e)+'
+servers:
+- url: https://auth.sandbox.vuiapp.vn
+paths:
+  /auth/realms/vuiapp/protocol/openid-connect/token:
+    post:
+      operationId: post_auth_realms_vuiapp_protocol_openid_connect_token
+      tags:
+      - Auth
+      summary: POST /auth/realms/vuiapp/protocol/openid-connect/token
+      x-source: https://api-docs.vuiapp.vn/\
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostAuthRealmsVuiappProtocolOpenidConnectTokenResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -L -X POST 'https://auth.sandbox.vuiapp.vn/auth/realms/vuiapp/protocol/openid-connect/token'  -H 'Content-Type: application/x-www-form-urlencoded'\
+          \  --data-urlencode 'client_id={{client_id}}'  --data-urlencode 'grant_type=client_credentials'  --data-urlencode 'client_secret={{client_secret}}'\n\
+          \ Sử dụng access token ở trên truy vấn danh sách ứng lương:"
+  /v1/advances:
+    get:
+      operationId: get_v1_advances
+      tags:
+      - Advances
+      summary: GET /v1/advances
+      x-source: https://api-docs.vuiapp.vn/\
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1AdvancesResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -L -X GET 'https://api.sandbox.vuiapp.vn/v1/advances'  -H 'Content-Type: application/json'  -H 'Authorization: Bearer {{access_token}}'\n\
+          \ Mẫu Dữ Liệu Nhân Viên Download \n Company Công ty \n Lấy danh sách công ty query Parameters include_total boolean Default: false limit\
+          \ integer < int32 > Default: 50 offset integer < int64 > Default: 0 Responses 200 OK \n get /v2/companies Vui Sandbox Environmen"
+components:
+  schemas:
+    PostAuthRealmsVuiappProtocolOpenidConnectTokenResponse:
+      type: object
+      properties:
+        total:
+          type: integer
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              createdDate:
+                type: string
+                format: date-time
+              lastModifiedDate:
+                type: string
+                format: date-time
+              code:
+                type: string
+              name:
+                type: string
+              contractCompanyName:
+                type: string
+              contractCompanyTaxCode:
+                type: string
+              contractCompanyAddress:
+                type: string
+              status:
+                type: string
+    GetV1AdvancesResponse:
+      type: object
+      properties:
+        total:
+          type: integer
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              createdDate:
+                type: string
+                format: date-time
+              lastModifiedDate:
+                type: string
+                format: date-time
+              code:
+                type: string
+              name:
+                type: string
+              contractCompanyName:
+                type: string
+              contractCompanyTaxCode:
+                type: string
+              contractCompanyAddress:
+                type: string
+              status:
+                type: string
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security:
+- bearer: []
+tags:
+- name: Advances
+- name: Auth

@@ -1,25 +1,83 @@
 aid: vuiapp-vn
+
 name: Nano
-description: 'Nano is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
-  backed by partech) and added to the network as a stub for full-pipeline profiling.'
+
+image: http://cdn.vuiapp.vn/cdn/ff/b33XxXb7d4av7xzy5GQQGJHZR6Mm4js7QrWgMHqdVf8/1722190048/public/2021-12/Nguye%CC%82%CC%83n%20Hoa%CC%80ng%20Ye%CC%82%CC%81n%2C%201999%2C%20nha%CC%82n%20vie%CC%82n%20ba%CC%81n%20ha%CC%80ng.jpg
+
+description: 'Nano is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio; backed by partech) and added to the network
+  as a stub for full-pipeline profiling.'
+
 url: https://raw.githubusercontent.com/api-evangelist/vuiapp-vn/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-23 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-23'
+
 modified: '2026-10-23'
+
 tags:
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-x-backed-by:
-- partech
+
 common:
+- type: Vendors
+  url: vendors/vuiapp-vn-vendors.yml
+- type: Spectral
+  url: rules/vuiapp-vn-rules.yml
+- type: JSONLD
+  url: json-ld/vuiapp-vn-context.jsonld
+- type: Vocabulary
+  url: vocabulary/vuiapp-vn-vocabulary.yml
+- type: DataModel
+  url: data-model/vuiapp-vn-data-model.yml
+- type: Conformance
+  url: conformance/vuiapp-vn-conformance.yml
+- type: Hosts
+  url: hosts/vuiapp-vn-hosts.yml
+- type: PrivacyPolicy
+  url: http://vuiapp.vn/privacy-policy
+- type: APIReference
+  url: https://github.com/Redocly/redoc
+- type: Documentation
+  url: https://api-docs.vuiapp.vn/
+- type: DomainSecurity
+  url: security/vuiapp-vn-domain-security.yml
 - type: Website
   url: https://vuiapp.vn/
+
+apis:
+- aid: vuiapp-vn:vuiapp-vn-api
+  name: Nano API
+  description: 'Nano API as documented publicly: 2 operations. Contract generated from the documentation by API Evangelist (2026-10-23); not the
+    provider''s own document.'
+  humanURL: https://api-docs.vuiapp.vn/\
+  baseURL: https://auth.sandbox.vuiapp.vn
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/vuiapp-vn-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/vuiapp-vn-get-v1-advances-response-schema.json
+  - type: JSONSchema
+    url: json-schema/vuiapp-vn-post-auth-realms-vuiapp-protocol-openid-connect-token-response-schema.json
+
+x-backed-by:
+- partech
+x-enrichment:
+  date: '2026-10-23'
+  status: enriched
+  artifacts_added: 15
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

@@ -1,0 +1,70 @@
+generated: '2026-10-23'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 5
+  own: 4
+  other_domain: 0
+  platform: 1
+  roles:
+  - api
+  - docs
+  - identity
+  - website
+hosts:
+- host: api-docs.vuiapp.vn
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - Documentation
+  serves:
+  - docs
+  registrable_domain: vuiapp.vn
+  role: docs
+  relation: own
+- host: api.vuiapp.vn
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: vuiapp.vn
+  role: api
+  relation: own
+- host: auth.sandbox.vuiapp.vn
+  found_by:
+  - apis[]
+  types: []
+  serves:
+  - api
+  registrable_domain: vuiapp.vn
+  role: identity
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - APIReference
+  serves: []
+  registrable_domain: github.com
+  role: docs
+  relation: platform
+- host: vuiapp.vn
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - PrivacyPolicy
+  - Website
+  serves: []
+  registrable_domain: vuiapp.vn
+  role: website
+  relation: own
